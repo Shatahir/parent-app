@@ -93,6 +93,72 @@
           }
         }
       }
+    },
+    "child1": {
+      "projectType": "library",
+      "root": "projects/child1",
+      "sourceRoot": "projects/child1/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/child1/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/child1/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/child1/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/child1/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "child2": {
+      "projectType": "library",
+      "root": "projects/child2",
+      "sourceRoot": "projects/child2/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/child2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/child2/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/child2/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/child2/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
